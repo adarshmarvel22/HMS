@@ -1,0 +1,96 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+  {% block csss %}
+  <style>
+    body {
+      background-image: url('{% static 'main/2.jpg' %}');
+    }
+    </style>
+  {% endblock csss %}
+
+{% block content %}
+<div class="container my-1">
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">You have successfully logged in!</h4>
+  <p>You can add patients and doctors by filling in the corrct details in the form below.</p>
+  <hr>
+  <p class="mb-0">This is basically a registration and information site build for staff and doctors of Hospital.</p>
+</div>
+</div>
+
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="container">
+      <form method="POST" action="">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+          </div>
+          {{form.username}}
+        </div>
+        <div class="input-group mb-2">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+          </div>
+          {{form.email}}
+        </div>
+        <div class="input-group mb-2">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+          </div>
+          {{form.password1}}
+        </div>
+        <div class="input-group mb-2">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-key"></i></span>
+          </div>
+          {{form.password2}}
+        </div>
+        {{form.errors}}
+				
+			
+				
+				
+      </div>
+
+
+           <div class="d-flex justify-content-center mt-3 login_container">
+           <input class="btn btn-secondary w-25" type="submit" value="Register">
+           </div>
+
+      </form>
+
+    </div>
+    <div class="col-6 col-md-4">
+      <div class="d-flex justify-content-center links">
+        Already have an account? <a href="{% url 'login2' %}" class="ml-2">Login</a>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-12 my-5">
+  <div class="d-flex justify-content-center links">
+    <h4>Do you want to logout?</h4> <a href="{% url 'login' %}" class="ml-2">
+      <button type="button" class="btn btn-secondary  btn-sm">Logout</button>
+    </a>
+  </div>
+  <script>
+ 
+var form_fields = document.getElementsByTagName('input')
+form_fields[1].placeholder='Username..';
+form_fields[2].placeholder='Email..';
+form_fields[3].placeholder='Enter password...';
+form_fields[4].placeholder='Re-enter Password...';
+
+
+for (var field in form_fields){	
+form_fields[field].className += ' form-control'
+}
+</script>
+{% endblock content %}

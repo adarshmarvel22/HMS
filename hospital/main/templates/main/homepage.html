@@ -1,0 +1,41 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="bd-example">
+        <div class="row">
+          <div class="col-12">
+            <img src="{% static 'main/1.jpg' %}" class="shrink" alt="My image">
+            {% comment %}  id="box-1" {% endcomment %}
+          </div>
+     
+           
+
+          <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="display-4 font-italic">We have pleasure of welcoming you.</h1>
+                <br>“Nurturing yourself is not selfish – it’s essential to your survival and your well-being.” – Renee Peterson Trudeau
+                <img src="{% static 'main/4.jpg' %}" class="col-6" alt="My image">
+              </div>
+              <div class="col-md-6">
+                <h1 class="display-4 font-italic">This is a basic information website</h1>
+                <br>“The human body is the best picture of the human soul.”<br> – Tony Robbins
+                <br> <img src="{% static 'main/6.jpg' %}" class="col-6" alt="My image">
+              </div>
+   
+            </div>
+    
+            <hr>
+    
+          </div>
+
+
+        </div>
+        </div>
+
+  </div>
+
+
+{% endblock content %}

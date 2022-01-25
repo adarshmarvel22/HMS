@@ -1,0 +1,61 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+ <p>
+  <div class="row">
+    {% comment %} <div class="col-6 col-md-4"> {% endcomment %}
+      <img src="{% static 'main/2.jpg' %}" class="col-6 col-md-4" alt="My image">
+      {% comment %} <img src="{% static 'main/2.jpg' %}" class="shrink2" id="box-2" alt="My image"> {% endcomment %}
+
+    {% comment %} </div> {% endcomment %}
+    <div class="col-6 col-md-4">
+      <div class="d-flex justify-content-center form_container">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+
+            <input type="text" name="username" placeholder="Username..." class="form-control">
+          </div>
+
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+
+              <input type="password" name="password" placeholder="Password..." class="form-control" >
+          </div>
+
+            <div class="d-flex justify-content-center mt-3 login_container">
+               <input class="btn login_btn" type="submit" value="Login">
+               </div>
+        </form>
+
+      </div>
+
+    </div>
+    <div class="col-6 col-md-4">
+    
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {% for message in messages %}
+      <p id="messages">{{message}}</p>
+    {% endfor %}
+
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+     
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Hello Staff member</strong> You should fill in your username and password to login!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+    </div>
+  </div>
+ </p>
+{% endblock content %}
