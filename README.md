@@ -17,7 +17,7 @@ If Django is not installed,install Django using the pip command.
 
 $ pip install Django
 
-Open a new terminal and Change your dirctory to hospital after activating the virtual environment ecp3.
+Open a new terminal and Change dirctory to hospital after activating the virtual environment ecp3.
 
 $ cd hospital
 
